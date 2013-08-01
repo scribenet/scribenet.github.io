@@ -14,13 +14,13 @@ a:hover, a:focus {
 }
 p {
 	font-size:16px;
-	font-weight:300;
+	font-weight:400;
 }
 #Header {
 	position:absolute;
 	top:60px;
 	right:60px;
-	bottom:160px;
+	bottom:120px;
 	left:60px;
 	background-color:transparent;
 	background-image:url(../images/scribe-logo.png);
@@ -37,8 +37,8 @@ p {
 	right:0;
 	bottom:0;
 	left:0;
-	z-index:100;
-	padding:10px 0 40px 0;
+	z-index:1000;
+	padding:0px 0 20px 0;
 	text-align:center;
 	background-color:#0a2539;
 }
@@ -47,11 +47,13 @@ p {
 	right:0;
 	bottom:0;
 	left:0;
-	z-index:100;
-	padding:0 0 10px 0;
+	z-index:1001;
 	text-align:center;
 	background-color:transparent;
 }
 #Footer p {
 	font-size:14px;
+	font-weight:300;
+	margin:0 0 16px 0;
+	padding:0;
 }
