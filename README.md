@@ -1,4 +1,2 @@
-scribenet.github..io
-====================
-
+# scribenet.github.io
 Public Scribe Inc. GitHub page
