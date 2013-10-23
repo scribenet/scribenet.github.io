@@ -18,7 +18,7 @@ p {
 }
 #Header {
 	position:absolute;
-	top:60px;
+	top:120px;
 	right:60px;
 	bottom:120px;
 	left:60px;
@@ -31,6 +31,36 @@ p {
 #Header > * {
 	display:none;
 	visibility:hidden;
+}
+#Nav {
+	position:absolute;
+	right:0;
+	top:0;
+	left:0;
+	z-index:1000;
+	padding:0px 0 0px 0;
+	text-align:center;
+	background-color:#0a2539;
+}
+#Nav h2 {
+	font-size:18px;
+}
+#Nav ul {
+	list-style-type:none;
+}
+#Nav ul li {
+	display:inline-block;
+}
+#Nav ul li a {
+	font-size:13px;
+	background-color:#061723;
+	padding:4px 6px;
+	margin-left:4px;
+	margin-right:4px;
+	text-decoration:none;
+	border:none;
+	display:block;
+	margin-bottom:4px;
 }
 #Body {
 	position:absolute;
