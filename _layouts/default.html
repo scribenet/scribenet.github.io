@@ -47,8 +47,22 @@
                 font-size: 13px;
             }
             .blog-content p {
-              font-size:16px;
+              font-size:14px;
             }
+            .footer {
+              margin-top: 40px;
+              background-color: #E2E2EE;
+              padding: 30px 0 16px 0;
+            }
+            .footer p {
+              font-size: 11px;
+              opacity: 0.8;
+            }
+            .highlight {
+              margin:20px 0;
+            }
+            @media (min-width: 978px) { .container { max-width: 970px; } }
+            @media (min-width: 978px) { .jumbotron .container { max-width: 970px; } }
         </style>
 
     </head>
@@ -89,10 +103,9 @@
 
           {{ content }}
 
-          <div class="container">
-              <div class="footer">
-              <hr />
-                  <p>Content Copyright (c) 2014 Scribe Inc</p>
+          <div class="footer">
+              <div class="container">
+                  <p>Copyright (c) 2014 Scribe Inc. All rights reserved.</p>
               </div>
           </div>
 
