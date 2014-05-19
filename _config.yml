@@ -1,3 +1,5 @@
 name: Scribe Inc.
+description: The Scribe development blog.
+url: http://scribenet.github.io/
 markdown: redcarpet
 pygments: true
