@@ -1,160 +1,68 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body { height: 100%; }
-
 body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
+    margin-top:40px;
+    font-size: 18px;
+}
+.jumbotron {
+  background-color: rgba(78, 93, 108, 0.3);
+}
+.projects-list-item {
+  overflow: hidden;
+  background-color: transparent;
+  margin: 20px 0;
+  padding: 10px 20px 20px;
   text-align: center;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
-
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
-
-.posts li {
-  line-height: 1.75em;
-}
-
-.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
-}
-
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
-}
-
-.header a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-.title a {
-  color: #a00;
-}
-
-.title a:hover {
-  color: #000;
-}
-
-.header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.header a.extra:hover {
-  color: #000;
-}
-
-.meta {
-  color: #aaa;
-}
-
-.footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
+.projects-list-item h2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
+  font-size: 26px;
 }
-
-.footer .contact {
-  float: left;
-  margin-right: 3em;
+.projects-list-item p {
+    font-size: 13px;
 }
-
-.footer .contact a {
-  color: #8085C1;
+.blog-content p {
+  font-size:14px;
 }
-
-.footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
+.footer {
+  margin-top: 40px;
+  background-color: #4e5d6c;
+  padding: 30px 0 16px 0;
 }
-
-.footer .rss img {
-  border: 0;
+.footer p {
+  font-size: 11px;
+  opacity: 0.8;
 }
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
+.highlight {
+  margin:20px 0;
 }
-
-.post ul, .post ol {
-  margin-left: 1.35em;
+p code {
+  color: #D3A9B4;
+  background-color: rgba(0, 0, 0, 0.15);
 }
-
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
+.posts li {
+  border-top: 1px solid #4e5d6c;
 }
-
-.post pre code {
-  border: none;
+.posts {
+  border-bottom: 1px solid #4e5d6c;
 }
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+.posts-sb p {
+  font-size:16px;
 }
-
-.post pre.terminal code {
-  background-color: #333;
+.posts-sb p small {
+  display:block;
 }
+.panel {
+  background-color: rgba(78, 93, 108, 0.26);
+}
+.panel .text-muted {
+  color: #858C92;
+}
+.panel-default > .panel-heading {
+  background-color: rgba(12, 32, 53, 0.34);
+}
+.panel-title {
+  font-size:24px;
+}
+@media (min-width: 978px) { .container { max-width: 970px; } }
+@media (min-width: 978px) { .jumbotron .container { max-width: 970px; } }
