@@ -13,11 +13,11 @@ Recently I received a call from our President, David Alan Rech, asking about pos
 
 [SPDY](http://en.wikipedia.org/wiki/SPDY) (pronounced *speedy*) is a network protocol developed primarily by Google. It's intention is to improve load latency and security. For Scribe's needs, the most important aspects of this protocol are compression, multiplexing, and prioritization. 
 
-In a regular HTTP request, when a user client (such as Firefox or Chrome) requests a web page (such as [scribenet.com](https://scribenet.com/)), an HTTP request is initiated with the server. As the user client reads the page HTML, it creates new HTTP requests for each resource on the page--every image, style-sheet, and javascript resource. This leads to upwards of ten or fifteen HTTP requests for each individual page. 
+In a regular HTTP request, when a user client (such as Firefox or Chrome) requests a web page (such as [scribenet.com](https://scribenet.com/)), an HTTP request is initiated with the server. As the user client reads the page HTML, it creates new HTTP requests for each resource on the page---every image, style-sheet, and javascript resource. This leads to upwards of ten or fifteen HTTP requests for each individual page. 
 
 It is important to realize that each additional HTTP request increases the overhead of a page load. The more assets a page has, the higher the perceived latency. SPDY works to mitigate these costs by effectively acting as a tunnel for HTTP traffic and modifying the way HTTP requests and responses are sent. This includes prioritizing and multiplexing the transfer of resources so only one connection per client is required.
 
-### Enable with Nginx
+### Nginx
 
 To enable SPDY within Nginx, you will need to have a version `> 1.5.1` with the `spdy` module enabled. On Ubuntu, I highly recommend using the official [Nginx Launchpad PPA](https://launchpad.net/~nginx/+archive/stable). At this time, the stable channel offers version 1.6 of Nginx on Ubuntu 12.04.1 LTS.
 
@@ -53,4 +53,8 @@ Using Chrome/Chromium, first navigate to your website (if you haven't setup Ngin
 chrome://net-internals/#spdy
 ```
 
-Within the list of *SPDY sessions* you will see your website host listed. In our internal testing, page load improved upwards of 30%. 
+Within the list of *SPDY sessions* you will see your website host listed.
+
+### Conclusion
+
+In our internal testing, page load improved upwards of 25%---a substantial percentage! I estimate perceived latency will be even greater. SPDY is currently enabled on the majority of Google web servers and a percentage of Twitter and Facebook servers. It is also being used by the [Internet Engineering Task Force](http://en.wikipedia.org/wiki/Internet_Engineering_Task_Force) as the baseline for the working draft of [HTTP 2.0](http://en.wikipedia.org/wiki/HTTP_2.0).
