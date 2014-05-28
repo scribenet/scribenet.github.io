@@ -22,7 +22,7 @@ body {
     font-size: 13px;
 }
 .blog-content p {
-  font-size:14px;
+  font-size:0.5em;
 }
 .footer {
   margin-top: 40px;
@@ -62,7 +62,5 @@ p code {
   background-color: rgba(12, 32, 53, 0.34);
 }
 .panel-title {
-  font-size:24px;
+  font-size:1.0em;
 }
-@media (min-width: 978px) { .container { max-width: 970px; } }
-@media (min-width: 978px) { .jumbotron .container { max-width: 970px; } }

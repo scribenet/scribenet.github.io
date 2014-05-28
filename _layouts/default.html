@@ -8,8 +8,7 @@
 
         <!-- Latest compiled and minified CSS -->
         <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://bootswatch.com/superhero/bootstrap.css">
+        <link rel="stylesheet" href="/css/bootstrap.css">
 
         <!-- syntax highlighting and main CSS -->
         <link rel="stylesheet" href="/css/syntax-monokai.css">
@@ -23,8 +22,8 @@
         <![endif]-->
 
         <!-- Latest compiled and minified JavaScript -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
     </head>
     <body>
@@ -77,6 +76,20 @@
 
           ga('create', 'UA-45741712-2', 'scribenet.github.io');
           ga('send', 'pageview');
+        </script>
+
+        <script type="text/javascript" src="/js/flowtype.js"></script>
+        <script type="text/javascript">
+
+          $('body').flowtype({
+             minimum   : 300,
+             maximum   : 1200,
+             minFont   : 14,
+             maxFont   : 60,
+             fontRatio : 30,
+             lineRatio : 1.45
+          });
+
         </script>
 
     </body>
