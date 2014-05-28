@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SPDY
+title: A Speedy Web
 ---
 
 At Scribe, we are constantly working to better the experience of our clients. Since our WFDW clients and internal staff rely heavily on our web applications, we strive to improve the effectiveness of these services. Since the release of our newest platform, we migrated from [Apache](http://en.wikipedia.org/wiki/Apache_HTTP_Server) to [Nginx](http://en.wikipedia.org/wiki/Nginx). 
@@ -9,7 +9,7 @@ This transition allowed for increased web-server performance with less memory an
 
 Recently I received a call from our President, David Alan Rech, asking about possible performance difficulties. While the problem was ultimately a local internet issue, the notion of improving our performance, given the requirements of our web applications, resulted in some additional research. 
 
-### A Speedy Web
+### SPDY
 
 [SPDY](http://en.wikipedia.org/wiki/SPDY) (pronounced *speedy*) is a network protocol developed primarily by Google. It's intention is to improve load latency and security. For Scribe's needs, the most important aspects of this protocol are compression, multiplexing, and prioritization. 
 
