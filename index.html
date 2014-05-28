@@ -22,7 +22,7 @@ title: Home
   <ul class="list-unstyled posts">
     {% for post in site.posts %}
       <li>
-      	<h4><a href="{{ post.url }}">{{ post.title }}</a> <span class="label label-info">{{ post.date | date: '%B %d, %Y' }}</span></h4>
+      	<h4>{{ post.date | date: '%B %d, %Y' }}: <a href="{{ post.url }}">{{ post.title }}</a></h4>
       </li>
     {% endfor %}
   </ul>
