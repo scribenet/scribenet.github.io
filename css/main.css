@@ -1,9 +1,68 @@
 body {
     margin-top:40px;
-    font-size: 18px;
+    font-size: 14px;
+}
+body p {
+  font-size:0.4em;
 }
 .jumbotron {
   background-color: rgba(78, 93, 108, 0.3);
+}
+.page-jumbotron small {
+  text-transform: uppercase;
+display: block;
+font-size: 30px;
+padding-top: 6px;
+opacity: 0.3;
+font-weight: 500;
+display: none;
+}
+.code-group-well {
+  border-radius: 1000px;
+text-align: center;
+background-color: rgba(78, 93, 108, 0.25);
+}
+.code-group-well p {
+  margin:0;
+  font-size:0.4em;
+}
+.code-group-well p a {
+  font-family: monospace;
+display: block;
+font-style: normal;
+}
+.code-group-list li {
+  overflow:auto;
+  padding-top:14px;
+  padding-bottom:20px;
+  position: relative;
+}
+.code-repo-info {
+  margin-right:200px;
+}
+.code-repo-info p {
+  padding-top:0px;
+  padding-left:4px;
+}
+.code-repo-clone {
+  text-align:right;
+  margin-top: -58px;
+}
+.code-clone-url {
+  text-align:right;
+  font-family: monospace;
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 40px;
+  background-color: transparent;
+  border: none;
+}
+.code-clone-url-dply {
+  padding:0px;
+}
+.code-clone-url-dply code {
+  padding:8px 10px 6px 10px !important;
 }
 .projects-list-item {
   overflow: hidden;
@@ -22,29 +81,86 @@ body {
     font-size: 13px;
 }
 .blog-content p {
-  font-size:0.5em;
+    font-size:0.425em;
+    line-height:1.5em;
 }
+.blog-content h3 {
+  font-size: 1.1em;
+  opacity: 0.75;
+}
+.blog-author {
+  margin-top:60px;
+  margin-bottom:30px;
+  background-color: rgba(78, 93, 108, 0.26);
+  border: 1px solid rgba(12, 32, 53, 0.30);
+  padding:16px;
+  border-radius:63px;
+}
+.blog-author-info img {
+  border-radius: 94px;
+  float: left;
+  margin-right: 22px;
+  height: 94px;
+  border:1px solid rgba(255,255,255,0.2);
+}
+.blog-author-info p {
+  margin:0;
+  padding:0;
+  opacity:0.85;
+  font-size:0.5em;
+  line-height:1.4em;
+}
+.blog-author-info a {
+  opacity:0.8;
+  display:block;
+  padding-top:10px;
+}
+.blog-author-info a,
+.blog-author-info a:hover,
+.blog-author-info a:focus {
+
+    color: #fff !important;
+}
+
+.blog-author-info a:hover,
+.blog-author-info a:focus {
+  opacity:.85;
+}
+
 .footer {
-  margin-top: 40px;
-  background-color: #4e5d6c;
-  padding: 30px 0 16px 0;
+margin-top: 40px;
+background-color: rgba(0, 0, 0, 0.04);
+padding: 20px 0 10px 0;
 }
 .footer p {
-  font-size: 0.4em;
-  opacity: 0.8;
+  font-size: 0.3em;
+  opacity: 0.6;
 }
 .highlight {
   margin:20px 0;
 }
 p code {
   color: #D3A9B4;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+  padding: 0;
+}
+.posts-header {
+  margin-top: 8px;
+padding-bottom: 10px;
+border-bottom: 1px solid #fff;
+font-size: 34px;
+font-weight: 500;
+opacity: 0.6;
 }
 .posts li {
-  border-top: 1px solid #4e5d6c;
+border-bottom: 1px solid rgba(78, 93, 108, 0.49);
+padding-bottom: 16px;
+margin-bottom: 6px;
 }
-.posts {
-  border-bottom: 1px solid #4e5d6c;
+.posts li small {
+  display: block;
+text-transform: uppercase;
+font-size: 18px;
 }
 .posts-sb p {
   font-size:0.5em;
@@ -62,5 +178,7 @@ p code {
   background-color: rgba(12, 32, 53, 0.34);
 }
 .panel-title {
-  font-size:1.0em;
+  font-size:0.85em;
+  font-weight:500;
+  opacity:0.5;
 }

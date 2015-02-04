@@ -1,0 +1,64 @@
+title: Sublime Text Plugins
+desc: A collection of Sublime, Package Control compatible plugins, used internally at Scribe.
+url: https://scribe.software/code/projects/SUBL
+repos:
+  - 
+    name: Sublime Core Repository Plugin
+    url: https://scribe.software/code/projects/subl/repos/sublime-core-repository-plugin/
+    clone: https://scribe.software/code/scm/subl/sublime-core-repository-plugin.git
+    desc: 
+  - 
+    name: Sublime Dictionaries Bundle
+    url: https://scribe.software/code/projects/subl/repos/sublime-dictionaries-bundle/
+    clone: https://scribe.software/code/scm/subl/sublime-dictionaries-bundle.git
+    desc: 
+  - 
+    name: Sublime Encoding Plugin
+    url: https://scribe.software/code/projects/subl/repos/sublime-encoding-plugin/
+    clone: https://scribe.software/code/scm/subl/sublime-encoding-plugin.git
+    desc: 
+  - 
+    name: Sublime Icons Bundle
+    url: https://scribe.software/code/projects/subl/repos/sublime-icons-bundle/
+    clone: https://scribe.software/code/scm/subl/sublime-icons-bundle.git
+    desc: 
+  - 
+    name: Sublime Invisibles Plugin
+    url: https://scribe.software/code/projects/subl/repos/sublime-invisibles-plugin/
+    clone: https://scribe.software/code/scm/subl/sublime-invisibles-plugin.git
+    desc: 
+  - 
+    name: Sublime Iterator Bundle
+    url: https://scribe.software/code/projects/subl/repos/sublime-iterator-bundle/
+    clone: https://scribe.software/code/scm/subl/sublime-iterator-bundle.git
+    desc: 
+  - 
+    name: Sublime Key-Bindings Bundle
+    url: https://scribe.software/code/projects/subl/repos/sublime-key-bindings-bundle/
+    clone: https://scribe.software/code/scm/subl/sublime-key-bindings-bundle.git
+    desc: 
+  - 
+    name: Sublime Settings Plugin
+    url: https://scribe.software/code/projects/subl/repos/sublime-settings-plugin/
+    clone: https://scribe.software/code/scm/subl/sublime-settings-plugin.git
+    desc: 
+  - 
+    name: Sublime Templates Bundle
+    url: https://scribe.software/code/projects/subl/repos/sublime-templates-bundle/
+    clone: https://scribe.software/code/scm/subl/sublime-templates-bundle.git
+    desc: 
+  - 
+    name: Sublime Trailing Spaces Plugin
+    url: https://scribe.software/code/projects/subl/repos/sublime-trailing-spaces-plugin/
+    clone: https://scribe.software/code/scm/subl/sublime-trailing-spaces-plugin.git
+    desc: 
+  - 
+    name: Sublime Validation Plugin
+    url: https://scribe.software/code/projects/subl/repos/sublime-validation-plugin/
+    clone: https://scribe.software/code/scm/subl/sublime-validation-plugin.git
+    desc: 
+  - 
+    name: Sublime XML Validation Plugin
+    url: https://scribe.software/code/projects/subl/repos/sublime-xml-validation-plugin/
+    clone: https://scribe.software/code/scm/subl/sublime-xml-validation-plugin.git
+    desc: 

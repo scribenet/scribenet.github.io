@@ -1,0 +1,94 @@
+title: PHP Libraries
+desc: Collection of open-source PHP Library components fully compatible with Composer.
+url: https://scribe.software/code/projects/PHPL
+repos:
+  - 
+    name: Jabiru Markdown Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/jabiru-markdown-bundle/
+    clone: https://scribe.software/code/scm/phps/jabiru-markdown-bundle.git
+    desc: Bundle to intwgrate the Jabiru markdown parser into Symfony.
+  - 
+    name: Cache Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-cache-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-cache-bundle.git
+    desc: Simplistic cache abstraction layer (for APC only at this time) for Symfony2.
+  - 
+    name: Clockwork Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-clockwork-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-clockwork-bundle.git
+    desc: Symfony bundle to handle interaction with the ClockworkSMS.com API for SMS messaging.
+  - 
+    name: File Uploader Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-file-uploader-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-file-uploader-bundle.git
+    desc: Simple multi-uploader based off of the work by Punkave and Blueimp.
+  - 
+    name: Scribe Foundation Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-foundation-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-foundation-bundle.git
+    desc: The base Symfony framework, dependencies, and shared utilities used for Scribe Inc. internal Symfony projects. We also maintain a collection of open-source projects related to Symfony, Sublime Text, jQuery, and more.
+  - 
+    name: GitHub API Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-github-api-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-github-api-bundle.git
+    desc: Object oriented PHP5 client for GitHub's API (v3).
+  - 
+    name: GitLab API Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-gitlab-api-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-gitlab-api-bundle.git
+    desc: Object oriented PHP5 client for GitLab's API.
+  - 
+    name: Image Magick Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-image-magick-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-image-magick-bundle.git
+    desc: Symfony bundle to provide an abstraction layer over the PHP IMagick library with higher-level, reusable functionality.
+  - 
+    name: Markdown Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-markdown-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-markdown-bundle.git
+    desc: This bundle lets you easily make use of the markdown parser inside your Symfony applications.
+  - 
+    name: Pheanstalk Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-pheanstalk-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-pheanstalk-bundle.git
+    desc: Symfony2 Bundle that provides a pheanstalk integration.
+  - 
+    name: PHP Spec Code Coverage Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-php-spec-code-coverage-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-php-spec-code-coverage-bundle.git
+    desc: This project was forked from henrikbjorn/PhpSpecCodeCoverageExtension to customize some of the inner workings of this project to better align with the workflow I use both at home and when I work for Scribe Inc. Additional information as to what that means will be added shortly.
+  - 
+    name: Pygments Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-pygments-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-pygments-bundle.git
+    desc: Provides (X)HTML rendering of Markdown similar to GFM (Github flavored markdown), including syntax-highted fenced code blocks.
+  - 
+    name: Resque Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-resque-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-resque-bundle.git
+    desc: The BCC resque bundle provides integration of php-resque to Symfony2. It is inspired from resque, a Redis-backed Ruby library for creating background jobs, placing them on multiple queues, and processing them later.
+  - 
+    name: Slack Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-slack-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-slack-bundle.git
+    desc: This Bundle will integrate Slack Team-Communication-Software into your Symfony2 Project and in the future will deliver a set of Project-Management-Tools to use between your Symfony-Project and Slack.
+  - 
+    name: Stripe Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-stripe-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-stripe-bundle.git
+    desc: Symfony bundle to handle interaction with the Stripe.com payments API.
+  - 
+    name: SWiM Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-swim-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-swim-bundle.git
+    desc: A Scribe Simple Wiki Markup bundle for Symfony.
+  - 
+    name: Syslog Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-syslog-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-syslog-bundle.git
+    desc: Scribe Syslog to common entity facilities bundle.
+  - 
+    name: Two-Factor Auth Bundle
+    url: https://scribe.software/code/projects/PHPS/repos/scribe-two-factor-auth-bundle/
+    clone: https://scribe.software/code/scm/phps/scribe-two-factor-auth-bundle.git
+    desc: This Symfony2 bundle provides two-factor authentication for your website.

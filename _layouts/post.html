@@ -15,12 +15,36 @@ layout: default
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-7">
 			<div class="blog-content">
 				{{ content }}
+				{% if site.data.authors.[page.author_key] %}
+					<div class="blog-author">
+						<div class="blog-author-info">
+							{% if site.data.authors.[page.author_key].gravatar %}
+								<img src="{{ site.data.authors.[page.author_key].gravatar | to_gravatar(100) }}" alt="{{ site.data.authors.[page.author_key].name }} Gravatar Profile Picture">
+							{% endif %}
+							<p>
+								<b>{{ site.data.authors.[page.author_key].name }}</b><br />
+								{% if site.data.authors.[page.author_key].title %}
+									{{ site.data.authors.[page.author_key].title }}{% if site.data.authors.[page.author_key].title and site.data.authors.[page.author_key].company %}, {% endif %}
+								{% endif %}
+								{% if site.data.authors.[page.author_key].company %}
+									{{ site.data.authors.[page.author_key].company }}
+								{% endif %}
+								{% if site.data.authors.[page.author_key].email %}
+									<br />
+									<a href="mailto:{{ site.data.authors.[page.author_key].email }}">
+										{{ site.data.authors.[page.author_key].email }}
+									</a>
+								{% endif %}
+							</p>
+						</div>
+					</div>
+				{% endif %}
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-4 col-md-offset-1">
 			<div class="panel panel-default">
 			  	<div class="panel-heading">
 			    	<h2 class="panel-title">Blog Archive</h2>

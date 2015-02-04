@@ -1,6 +1,8 @@
 ---
 layout: post
 title: New GitHub Website
+author_key: rmf
+tags:
 ---
 
 Welcome to the new Scribe [github.io website](http://scribenet.github.io/)! This blog, powered by the wonderfully simple [Jekyll](http://jekyllrb.com/), will feature news, information, and announcements on Scribe's contributions to the open source community.

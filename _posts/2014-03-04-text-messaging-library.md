@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Text Messaging Library
+author_key: rmf
+tags:
+- sms
+- symfony
 ---
 
 Recently, we wanted to be able to send text message alerts to a group of individuals as an early-warning method to identify degradation or failure of our systems. While there are an [array](http://www.twilio.com/sms) of [messaging](https://carouselsms.com/) [api](http://www.textmarks.com/front/dev/) [options](http://blog.mashape.com/post/56272188360/list-of-50-sms-apis), we settled on [Clockwork](http://www.clockworksms.com/). 

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="jumbotron page-jumbotron">
+	<div class="container">
+		<h1>
+		    {{ page.title }} <small>{% if page.level == "Code" %}Open Source Code{% else %}{{ page.level }}{% endif %}</small>
+		</h1>
+		<p>
+			{{ page.description }}
+		</p>
+	</div>
+</div>
+{{ content }}

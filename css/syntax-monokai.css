@@ -1,6 +1,6 @@
 .highlight .hll { background-color: #49483e }
 .highlight  { background: rgba(0, 0, 0, 0.1); color: #f8f8f2 }
-.highlight pre { background: transparent; color: #f8f8f2; border: 1px solid rgba(0, 0, 0, 0.25); }
+.highlight pre { background: transparent; color: #f8f8f2; border-left: 2px solid rgba(0, 0, 0, 0.25); }
 .highlight .c { color: #A2A2A2 } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
 .highlight .k { color: #66d9ef } /* Keyword */

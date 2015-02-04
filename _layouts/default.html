@@ -25,6 +25,13 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+        <link rel="stylesheet" href="/plugins/highlight/styles/atelier-lakeside.dark.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <script type="text/javascript" src="/plugins/zeroclipboard/ZeroClipboard.js"></script>
+        <script>ZeroClipboard.config( { swfPath: "/plugins/zeroclipboard/ZeroClipboard.swf" } );</script>
+
     </head>
     <body>
 
@@ -44,12 +51,13 @@
               <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Open Source Code <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="/projects/symfony-bundles/">Symfony Bundles</a></li>
-                    <li><a href="/projects/jquery-plugins/">jQuery Plugins</a></li>
-                    <li><a href="/projects/sublime-text-packages/">Sublime Text Packages</a></li>
-                    <li><a href="/projects/other/">Other</a></li>
+                    {% for page in site.pages %}
+                      {% if page.level == "Code" %}
+                        <li><a href="/{{ page.path }}">{{ page.title }}</a></li>
+                      {% endif %}
+                    {% endfor %}
                   </ul>
                 </li>
               </ul>
@@ -59,7 +67,6 @@
             </div><!--/.nav-collapse -->
           </div><!--/.container -->
         </div>
-
         {{ content }}
 
         <div class="footer">
@@ -91,22 +98,22 @@
           });
 
         </script>
-        <!-- Piwik -->
-    
+
         <script type="text/javascript">
-        var _paq = _paq || [];
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="https://scribenet.com/piwik/";
+          var _paq = _paq || [];
+          _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+          _paq.push(["setCookieDomain", "*.scribe.tools"]);
+          _paq.push(["setDomains", ["*.scribe.tools","*.open.scribe.tools","*.scribe.tools","*.open.scribe.tools"]]);
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="//piwik.scribe.systems/";
             _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', 2]);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-            g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        })();
+            _paq.push(['setSiteId', 300]);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+          })();
         </script>
-        <noscript><p><img src="https://scribenet.com/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
-        <!-- End Piwik Code -->
     
     </body>
 

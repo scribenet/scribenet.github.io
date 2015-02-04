@@ -1,6 +1,12 @@
 ---
 layout: post
 title: Scribe Nginx Build
+author_key: rmf
+tags:
+- nginx
+- launchpad
+- ubuntu
+- performance
 ---
 
 Over the past few months, we'd found ourselves building custom Nginx packages by hand regularly with
@@ -84,6 +90,3 @@ Once you're ready to give it a try, assuming you have SimpleSbuild configured as
 can try building your package using `BUILD_MODE=4` to attempt a build locally within a sanitized sbuild environment.
 
 Have question or comments? Please let us know [on GitHub](https://github.com/scribenet/nginx-scribe/issues)!
-
---- 
-Rob M Frawley 2nd, *Systems Architect of Scribe Inc.*
