@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Scribe Nginx Build</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Latest compiled and minified CSS -->
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+
+        <!-- syntax highlighting and main CSS -->
+        <link rel="stylesheet" href="/css/syntax-monokai.css">
+        <link rel="stylesheet" href="/css/main.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="/plugins/highlight/styles/atelier-lakeside.dark.css">
+        <script src="/plugins/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <script type="text/javascript" src="/plugins/zeroclipboard/ZeroClipboard.js"></script>
+        <script>ZeroClipboard.config( { swfPath: "/plugins/zeroclipboard/ZeroClipboard.swf" } );</script>
+
+    </head>
+    <body>
+
+        <!-- Static navbar -->
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Scribe Inc.</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Open Source Code <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    
+                      
+                    
+                      
+                    
+                      
+                        <li><a href="/projects/jquery.html">jQuery Plugins</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/nginx.html">Nginx & Plugins</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/php-libraries.html">PHP Libraries</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/php-symfony-bundles.html">PHP Symfonty Bundles</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/ruby-gems.html">Ruby Gems</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/scml-resources.html">ScML Resources</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/shell-scripts.html">Shell Scripts</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/sublime-text-plugins.html">Sublime Text Plugins</a></li>
+                      
+                    
+                  </ul>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://scribenet.com/">scribenet.com</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!--/.container -->
+        </div>
+        <div class="jumbotron">
+	<div class="container">
+		<h1>
+		    Scribe Nginx Build
+		</h1>
+		<p>
+			October 18, 2014
+		</p>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			<div class="blog-content">
+				<p>Over the past few months, we&#39;d found ourselves building custom Nginx packages by hand regularly with
+each new <a href="http://ppa.launchpad.net/nginx/development/ubuntu">Ubuntu Nginx Mainline</a> release, and it
+was becoming quite tedious. Having never worked with <a href="http://launchpad.net">Launchpad</a> prior, we began
+our journey by simply writing a script that would handle building a reliable Debian package for our own 
+internal use.</p>
+
+<p>After additional time working in this manner, it became obvious that for us to maintain a consistent 
+environment across our development workstations and our production servers, we would need to investigate
+the basics of Launchpad. Soon afterward, the <a href="launchpad.net/%7Escribeinc">scribeinc</a> Launchpad was created,
+including our first PPA for <a href="https://launchpad.net/%7Escribeinc/+archive/ubuntu/nginx">nginx</a>.</p>
+
+<h3>Launchpad</h3>
+
+<p>So as not to duplicate the content already well-written on the by the Laucnhpad volunteers, we aren&#39;t 
+going to go into the specifics of setting up Launchpad, adding trusted keys, or any of the basic procedures
+involved in getting your initial account setup. For that, the folks maintaining the <a href="https://help.launchpad.net/Packaging/SourceBuilds/GettingStarted">Getting Started Documentation</a>
+have done a wonderful job.</p>
+
+<p>Instead, we&#39;re going to take a moment to describe our initial missteps, and how our build script evolved 
+to support automatic local sandbox building/testing, followed by the upload of the relevant source and 
+diff files to Launchpad that ultimately cause their builders to create our final Debian packages.</p>
+
+<h3>SimpleSBuild</h3>
+
+<p>Our initial attempts to get our uploaded files to build properly on Launchpad failed miserably. At this 
+point we were simply testing the build using the <code>dpkg-buildpackage</code> command we had used in the past to 
+create the Debian package distributed to our developers and later pushed to our production environment.
+Getting assistance on what we were doing wrong turned out to be exceptionally easy: joining the <code>#launchpad</code>
+channel on IRC (Freenode Server).</p>
+
+<p>Once we started asking some basic questions, our issue became clear. Using <code>dpkg-buildpackage</code> didn&#39;t 
+provide a &quot;clean&quot; environment for our build to run; it allowed our build to reply on the underlying 
+packages and setup of our specific Ubuntu installation to compile successfully. This enviornment wasn&#39;t 
+anywhere near the same as that of the automated package builders dispatched by Launchpad when source files
+were uploaded.</p>
+
+<p>We were directed to <a href="https://wiki.ubuntu.com/SimpleSbuild">SimpleSbuild</a>. Following the directions outlined
+in that help document allowed us to setup a function build environment that that we could test our packages
+against prior to uploading to Launchpad. While not an exact replica of the automated build agents on Launchpad,
+such an environment was extremely close.</p>
+
+<p>After configuring SimpleSbuild and attempting to compile our package within that environment locally, 
+the issues with out build process quickly became apparent, allowing us to amend our procedure to suite
+the enviornment it would be build against to create our final PPA Debian packages.</p>
+
+<h3>Newest Build Script</h3>
+
+<p>Our latest build script allows for compiling in additional modules with ease. At this time, our build of
+Nginx is statically compiled against the latest (at this time v8.36) release of PCRE to support JIT regex
+parsing within our configuration files.</p>
+
+<p>At this time, we build Nginx with the following flags</p>
+
+<p><code>--with-debug</code>, <code>--with-pcre-jit</code>, <code>--with-ipv6</code>, <code>--with-file-aio</code>, <code>--without-poll_module</code>, <code>--without-select_module</code>, <code>--without-http_uwsgi_module</code>. </p>
+
+<p>and the following modules</p>
+
+<p><code>http_ssl_module</code>, <code>http_stub_status_module</code>, <code>http_realip_module</code>, <code>http_auth_request_module</code>, <code>http_geoip_module</code>, <code>http_spdy_module</code>, <code>ngx_pagespeed-release-beta</code>, <code>alphashack_nginx_graphdat</code>, <code>nginx-auth-pam</code>, <code>nginx-development-kit</code>, <code>ngx-fancyindex</code>, <code>nginx-upload-progress</code>.</p>
+
+<h3>Using our PPA</h3>
+
+<p>Using our PPA is as simple as running the following on any supported Ubuntu release (currently Trusty and Utopic):</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">sudo apt-add-repository ppa:scribeinc/nginx
+</code></pre></div>
+<h3>Customizing</h3>
+
+<p>If you&#39;d like to build your own packages, feel free to clone our build repository:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">git clone https://github.com/scribenet/nginx-scribe.git
+</code></pre></div>
+<p>Be sure to open up the <code>bootstrap.sh</code> file and edit the beginning configuration variables to suite your needs. </p>
+
+<p>Once you&#39;re ready to give it a try, assuming you have SimpleSbuild configured as described in the aforementioned documentation, you
+can try building your package using <code>BUILD_MODE=4</code> to attempt a build locally within a sanitized sbuild environment.</p>
+
+<p>Have question or comments? Please let us know <a href="https://github.com/scribenet/nginx-scribe/issues">on GitHub</a>!</p>
+
+				
+					<div class="blog-author">
+						<div class="blog-author-info">
+							
+								<img src="http://www.gravatar.com/avatar/39b382050a0cdf9da742fa8a09a9c6f4?s=200&d=mm" alt="Rob Frawley 2nd Gravatar Profile Picture">
+							
+							<p>
+								<b>Rob Frawley 2nd</b><br />
+								
+									Systems Architect, 
+								
+								
+									Scribe Inc.
+								
+								
+									<br />
+									<a href="mailto:rmf@scribe.tools">
+										rmf@scribe.tools
+									</a>
+								
+							</p>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		<div class="col-md-4 col-md-offset-1">
+			<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h2 class="panel-title">Blog Archive</h2>
+			  	</div>
+			  	<div class="panel-body">
+			  		<ul class="list-unstyled posts-sb">
+				    	
+					      	<li>
+					      		<p><small class="text-muted">October 18, 2014</small> <a href="/2014/10/18/scribe-nginx-build.html">Scribe Nginx Build</a></p>
+					      	</li>
+					    
+					      	<li>
+					      		<p><small class="text-muted">May 28, 2014</small> <a href="/2014/05/28/spdy.html">A Speedy Web</a></p>
+					      	</li>
+					    
+					      	<li>
+					      		<p><small class="text-muted">March 04, 2014</small> <a href="/2014/03/04/text-messaging-library.html">Text Messaging Library</a></p>
+					      	</li>
+					    
+					      	<li>
+					      		<p><small class="text-muted">March 02, 2014</small> <a href="/2014/03/02/new-github-website.html">New GitHub Website</a></p>
+					      	</li>
+					    
+					</ul>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+        <div class="footer">
+            <div class="container">
+                <p>Copyright &copy; 2014 Scribe Inc. All rights reserved.</p>
+            </div>
+        </div>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-45741712-2', 'scribenet.github.io');
+          ga('send', 'pageview');
+        </script>
+
+        <script type="text/javascript" src="/js/flowtype.js"></script>
+        <script type="text/javascript">
+
+          $('body').flowtype({
+             minimum   : 300,
+             maximum   : 1200,
+             minFont   : 14,
+             maxFont   : 60,
+             fontRatio : 30,
+             lineRatio : 1.45
+          });
+
+        </script>
+
+        <script type="text/javascript">
+          var _paq = _paq || [];
+          _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+          _paq.push(["setCookieDomain", "*.scribe.tools"]);
+          _paq.push(["setDomains", ["*.scribe.tools","*.open.scribe.tools","*.scribe.tools","*.open.scribe.tools"]]);
+          _paq.push(['trackPageView']);
+          _paq.push(['enableLinkTracking']);
+          (function() {
+            var u="//piwik.scribe.systems/";
+            _paq.push(['setTrackerUrl', u+'piwik.php']);
+            _paq.push(['setSiteId', 300]);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+          })();
+        </script>
+    
+    </body>
+
+    
+
+</html>

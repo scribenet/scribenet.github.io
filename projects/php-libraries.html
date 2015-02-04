@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
+        <title>PHP Libraries</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- Latest compiled and minified CSS -->
@@ -45,7 +45,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="/">{{ site.name }}</a>
+              <a class="navbar-brand" href="/">Scribe Inc.</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -53,11 +53,43 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Open Source Code <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    {% for page in site.pages %}
-                      {% if page.level == "Code" %}
-                        <li><a href="/{{ page.path }}">{{ page.title }}</a></li>
-                      {% endif %}
-                    {% endfor %}
+                    
+                      
+                    
+                      
+                    
+                      
+                        <li><a href="/projects/jquery.html">jQuery Plugins</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/nginx.html">Nginx & Plugins</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/php-libraries.html">PHP Libraries</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/php-symfony-bundles.html">PHP Symfonty Bundles</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/ruby-gems.html">Ruby Gems</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/scml-resources.html">ScML Resources</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/shell-scripts.html">Shell Scripts</a></li>
+                      
+                    
+                      
+                        <li><a href="/projects/sublime-text-plugins.html">Sublime Text Plugins</a></li>
+                      
+                    
                   </ul>
                 </li>
               </ul>
@@ -67,7 +99,59 @@
             </div><!--/.nav-collapse -->
           </div><!--/.container -->
         </div>
-        {{ content }}
+        <div class="jumbotron page-jumbotron">
+	<div class="container">
+		<h1>
+		    PHP Libraries
+		</h1>
+		<p>
+			Collection of open-source PHP Library components fully compatible with Composer.
+		</p>
+	</div>
+</div>
+<div class="container">
+	<div class="well code-group-well">
+		<p><em>This group of projects is also available via our internal Git management solution at: <a href="https://scribe.software/code/projects/PHPL">https://scribe.software/code/projects/PHPL</a></em></p>
+	</div>
+	<div class="code-group-list">
+		<ul class="list-unstyled">
+		
+			<li>
+					<div class="code-repo-info">
+						<h6 style="padding-left:4px;"><a href="https://scribe.software/code/projects/PHPL/repos/jabiru-markdown-library/browse">Jabiru Markdown Library</a></h6>
+						<p>A PHP 5.6 Markdown parser supporting a specific subset/superset of the original Markdown implementation.</p>
+					</div>
+					<div class="code-repo-clone">
+						<button class="code-clone-url" data-clipboard-text="https://scribe.software/code/projects/PHPL/repos/jabiru-markdown-library/clone" title="Click to copy to the git clone URL for Jabiru Markdown Library to your clipboard.">Copy Git Clone URL</button>
+						<pre class="code-clone-url-dply"><code class="html">https://scribe.software/code/projects/PHPL/repos/jabiru-markdown-library/clone</code></pre>
+					</div>
+			</li>
+		
+			<li>
+					<div class="code-repo-info">
+						<h6 style="padding-left:4px;"><a href="https://scribe.software/code/projects/PHPL/repos/jabiru-markdown-library-benchmark/browse">Jabiru Markdown Library Benchmark</a></h6>
+						<p>A benchmarking suite that compares Jabiru to a collection of other similar Markdown parsers.</p>
+					</div>
+					<div class="code-repo-clone">
+						<button class="code-clone-url" data-clipboard-text="https://scribe.software/code/projects/PHPL/repos/jabiru-markdown-library-benchmark/clone" title="Click to copy to the git clone URL for Jabiru Markdown Library Benchmark to your clipboard.">Copy Git Clone URL</button>
+						<pre class="code-clone-url-dply"><code class="html">https://scribe.software/code/projects/PHPL/repos/jabiru-markdown-library-benchmark/clone</code></pre>
+					</div>
+			</li>
+		
+		</ul>
+	</div>
+</div>
+<script>
+var client = new ZeroClipboard($(".code-clone-url"));
+
+client.on( 'ready', function(event) {
+	console.log( 'movie is loaded' );
+
+	client.on( 'aftercopy', function(event) {
+	  console.log($(event.target).closest('.code-clone-url-dply'));
+	});
+} );
+</script>
 
         <div class="footer">
             <div class="container">

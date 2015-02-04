@@ -1,18 +1,51 @@
----
-layout: rssfeed
----
-<channel>
-	<title>{{ site.name | xml_escape }}</title>
-	<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>		
-	<link>{{ site.url }}</link>
-	<atom:link href="{{ site.url }}/feed.xml" rel="self" type="application/rss+xml" />
-	{% for post in site.posts limit:10 %}
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+	<title>Scribe Inc.</title>
+	<description>The Scribe development blog.</description>		
+	<link>http://scribenet.github.io/</link>
+	<atom:link href="http://scribenet.github.io//feed.xml" rel="self" type="application/rss+xml" />
+	
 		<item>
-			<title>{{ post.title | xml_escape }}</title>
-			<description>{{ post.excerpt | xml_escape }}</description>
-			<pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
-			<link>{{ site.url }}{{ post.url }}</link>
-			<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+			<title>Scribe Nginx Build</title>
+			<description>&lt;p&gt;Over the past few months, we&amp;#39;d found ourselves building custom Nginx packages by hand regularly with
+each new &lt;a href=&quot;http://ppa.launchpad.net/nginx/development/ubuntu&quot;&gt;Ubuntu Nginx Mainline&lt;/a&gt; release, and it
+was becoming quite tedious. Having never worked with &lt;a href=&quot;http://launchpad.net&quot;&gt;Launchpad&lt;/a&gt; prior, we began
+our journey by simply writing a script that would handle building a reliable Debian package for our own 
+internal use.&lt;/p&gt;
+</description>
+			<pubDate>Sat, 18 Oct 2014 00:00:00 -0400</pubDate>
+			<link>http://scribenet.github.io//2014/10/18/scribe-nginx-build.html</link>
+			<guid isPermaLink="true">http://scribenet.github.io//2014/10/18/scribe-nginx-build.html</guid>
 		</item>
-	{% endfor %}
+	
+		<item>
+			<title>A Speedy Web</title>
+			<description>&lt;p&gt;At Scribe Inc., we are constantly working to better the experience of our clients. Because our internal staff and (Well-Formed Document Workflow) WFDW clients both rely heavily on our web applications, we strive to improve the effectiveness of these services. Since the release of our newest platform, we&amp;#39;ve migrated from &lt;a href=&quot;http://en.wikipedia.org/wiki/Apache_HTTP_Server&quot;&gt;Apache&lt;/a&gt; to &lt;a href=&quot;http://en.wikipedia.org/wiki/Nginx&quot;&gt;Nginx&lt;/a&gt;. &lt;/p&gt;
+</description>
+			<pubDate>Wed, 28 May 2014 00:00:00 -0400</pubDate>
+			<link>http://scribenet.github.io//2014/05/28/spdy.html</link>
+			<guid isPermaLink="true">http://scribenet.github.io//2014/05/28/spdy.html</guid>
+		</item>
+	
+		<item>
+			<title>Text Messaging Library</title>
+			<description>&lt;p&gt;Recently, we wanted to be able to send text message alerts to a group of individuals as an early-warning method to identify degradation or failure of our systems. While there are an &lt;a href=&quot;http://www.twilio.com/sms&quot;&gt;array&lt;/a&gt; of &lt;a href=&quot;https://carouselsms.com/&quot;&gt;messaging&lt;/a&gt; &lt;a href=&quot;http://www.textmarks.com/front/dev/&quot;&gt;api&lt;/a&gt; &lt;a href=&quot;http://blog.mashape.com/post/56272188360/list-of-50-sms-apis&quot;&gt;options&lt;/a&gt;, we settled on &lt;a href=&quot;http://www.clockworksms.com/&quot;&gt;Clockwork&lt;/a&gt;. &lt;/p&gt;
+</description>
+			<pubDate>Tue, 04 Mar 2014 00:00:00 -0500</pubDate>
+			<link>http://scribenet.github.io//2014/03/04/text-messaging-library.html</link>
+			<guid isPermaLink="true">http://scribenet.github.io//2014/03/04/text-messaging-library.html</guid>
+		</item>
+	
+		<item>
+			<title>New GitHub Website</title>
+			<description>&lt;p&gt;Welcome to the new Scribe &lt;a href=&quot;http://scribenet.github.io/&quot;&gt;github.io website&lt;/a&gt;! This blog, powered by the wonderfully simple &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, will feature news, information, and announcements on Scribe&amp;#39;s contributions to the open source community.&lt;/p&gt;
+</description>
+			<pubDate>Sun, 02 Mar 2014 00:00:00 -0500</pubDate>
+			<link>http://scribenet.github.io//2014/03/02/new-github-website.html</link>
+			<guid isPermaLink="true">http://scribenet.github.io//2014/03/02/new-github-website.html</guid>
+		</item>
+	
 </channel>
+
+</rss>

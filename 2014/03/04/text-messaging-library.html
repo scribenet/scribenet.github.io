@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Home</title>
+        <title>Text Messaging Library</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- Latest compiled and minified CSS -->
@@ -101,127 +101,136 @@
         </div>
         <div class="jumbotron">
 	<div class="container">
-		
-		<h1 class="entry-title">
-		    Scribe Nginx Build
+		<h1>
+		    Text Messaging Library
 		</h1>
-		<div class="entry-content"><p>Over the past few months, we&#39;d found ourselves building custom Nginx packages by hand regularly with
-each new <a href="http://ppa.launchpad.net/nginx/development/ubuntu">Ubuntu Nginx Mainline</a> release, and it
-was becoming quite tedious. Having never worked with <a href="http://launchpad.net">Launchpad</a> prior, we began
-our journey by simply writing a script that would handle building a reliable Debian package for our own 
-internal use.</p>
-</div>
 		<p>
-			<a class="btn btn-md btn-primary" href="/2014/10/18/scribe-nginx-build.html" role="button">Read more</a>
+			March 04, 2014
 		</p>
 	</div>
 </div>
 
 <div class="container">
-<div id="home" class="row">
-	<div class="col-md-7">
-	  <h3 class="posts-header">Latest Blog Entries</h3>
-	  <ul class="list-unstyled posts">
-	    
-	      <li>
-	      	<a href="/2014/10/18/scribe-nginx-build.html">Scribe Nginx Build</a> <small>October 18, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/05/28/spdy.html">A Speedy Web</a> <small>May 28, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/03/04/text-messaging-library.html">Text Messaging Library</a> <small>March 04, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/03/02/new-github-website.html">New GitHub Website</a> <small>March 02, 2014</small>
-	      </li>
-	    
-	  </ul>
-	</div>
-	<div class="col-md-4 col-md-offset-1">
-		<div class="panel panel-default">
-		  	<div class="panel-heading">
-		    	<h2 class="panel-title">Project Categories</h2>
-		  	</div>
-		  	<div class="panel-body">
-		  		<ul class="list-unstyled posts-sb">
-		  			
-                      
-                    
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/jquery.html">jQuery Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/nginx.html">Nginx & Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/php-libraries.html">PHP Libraries</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/php-symfony-bundles.html">PHP Symfonty Bundles</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/ruby-gems.html">Ruby Gems</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/scml-resources.html">ScML Resources</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/shell-scripts.html">Shell Scripts</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/sublime-text-plugins.html">Sublime Text Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-				</ul>
-		  	</div>
+	<div class="row">
+		<div class="col-md-7">
+			<div class="blog-content">
+				<p>Recently, we wanted to be able to send text message alerts to a group of individuals as an early-warning method to identify degradation or failure of our systems. While there are an <a href="http://www.twilio.com/sms">array</a> of <a href="https://carouselsms.com/">messaging</a> <a href="http://www.textmarks.com/front/dev/">api</a> <a href="http://blog.mashape.com/post/56272188360/list-of-50-sms-apis">options</a>, we settled on <a href="http://www.clockworksms.com/">Clockwork</a>. </p>
+
+<p>Unlike other solutions, Clockwork provides a simple SMS messaging API with no additional bells and whistles; we weren&#39;t looking for VOIP services, conferencing features, or anything else. Clockwork developed a clean messaging API, perfect for our needs.</p>
+
+<p>Clockwork offers libraries for a handful of languages, including PHP, Ruby, Java, Python, and C#, though our interest was in their HTTP XML API. Using this, we were able to build a small and simple Symfony bundle to interface with Clockwork&#39;s XML API. Since they already had a PHP library that took advantage of the XML API, much of our code was was derived from their <a href="https://github.com/mediaburst/clockwork-php">PHP wrapper</a>.</p>
+
+<h3>Configure the bundle</h3>
+
+<p>Our <a href="https://github.com/scribenet/ScribeClockworkBundle">Clockwork Bundle</a> includes parameter injection via the Symfony service container. At a minimum, you must configure your API key.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">scribe_clockwork:
+    api_key: your-api-key-goes-here
+</code></pre></div>
+<p>A complete reference of the available configuration options can be found within the project&#39;s <a href="https://github.com/scribenet/ScribeClockworkBundle#configuration">README.md</a>.</p>
+
+<h3>Sending a message</h3>
+
+<p>This bundle includes a single service, <code>scribe_clockwork</code>. To send a message, simply request the service and call the <code>send</code> method. You can optionally use the <code>sendMultiple</code> method to pass multiple phone numbers and messages.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php">// request the service
+$cw = $this-&gt;get(&#39;scribe_clockwork&#39;);
+
+// send a single message
+$message_id = $cw-&gt;send(&#39;12223334444&#39;, &#39;Your text message&#39;);
+
+// send multiple messages
+$message_ids = $cw-&gt;sendMultiple([
+    &#39;12223334444&#39; =&gt; &#39;Your text message&#39;,
+    &#39;23334445555&#39; =&gt; &#39;Your second message&#39;
+]);</code></pre></div>
+
+<h3>Additional Features</h3>
+
+<p>We provide methods for checking API key validity, available credit, and available balance. You can use these methods as follows:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php">// request the service
+$cw = $this-&gt;get(&#39;scribe_clockwork&#39;);
+
+// check api key validity
+if ($cw-&gt;isValidApiKey() === false) {
+    echo &#39;Invalid API Key&#39;;
+}
+
+// get available credits
+$credits = $cw-&gt;getCredit();
+
+// get available balance
+list($balance, $symbol, $code) = $cw-&gt;getBalance();</code></pre></div>
+
+<h3>Exceptions</h3>
+
+<p>All the available public methods may throw <code>ClockworkException</code> exceptions. As such, it is advisable to wrap your API calls within a try/catch block to avoid exceptions bubbling up. In a production environment, our first example would be rewritten to look like this:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php">// request the service
+$cw = $this-&gt;get(&#39;scribe_clockwork&#39;);
+
+try {
+    // send a single message
+    $message_id = $cw-&gt;send(&#39;12223334444&#39;, &#39;Your text message&#39;);
+} catch (ClockworkException $e) {
+    // perform some action if exception occurs
+}</code></pre></div>
+
+				
+					<div class="blog-author">
+						<div class="blog-author-info">
+							
+								<img src="http://www.gravatar.com/avatar/39b382050a0cdf9da742fa8a09a9c6f4?s=200&d=mm" alt="Rob Frawley 2nd Gravatar Profile Picture">
+							
+							<p>
+								<b>Rob Frawley 2nd</b><br />
+								
+									Systems Architect, 
+								
+								
+									Scribe Inc.
+								
+								
+									<br />
+									<a href="mailto:rmf@scribe.tools">
+										rmf@scribe.tools
+									</a>
+								
+							</p>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+		<div class="col-md-4 col-md-offset-1">
+			<div class="panel panel-default">
+			  	<div class="panel-heading">
+			    	<h2 class="panel-title">Blog Archive</h2>
+			  	</div>
+			  	<div class="panel-body">
+			  		<ul class="list-unstyled posts-sb">
+				    	
+					      	<li>
+					      		<p><small class="text-muted">October 18, 2014</small> <a href="/2014/10/18/scribe-nginx-build.html">Scribe Nginx Build</a></p>
+					      	</li>
+					    
+					      	<li>
+					      		<p><small class="text-muted">May 28, 2014</small> <a href="/2014/05/28/spdy.html">A Speedy Web</a></p>
+					      	</li>
+					    
+					      	<li>
+					      		<p><small class="text-muted">March 04, 2014</small> <a href="/2014/03/04/text-messaging-library.html">Text Messaging Library</a></p>
+					      	</li>
+					    
+					      	<li>
+					      		<p><small class="text-muted">March 02, 2014</small> <a href="/2014/03/02/new-github-website.html">New GitHub Website</a></p>
+					      	</li>
+					    
+					</ul>
+			  	</div>
+			</div>
 		</div>
 	</div>
-</div>
 </div>
 
         <div class="footer">

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Home</title>
+        <title>Nginx & Plugins</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- Latest compiled and minified CSS -->
@@ -99,130 +99,70 @@
             </div><!--/.nav-collapse -->
           </div><!--/.container -->
         </div>
-        <div class="jumbotron">
+        <div class="jumbotron page-jumbotron">
 	<div class="container">
-		
-		<h1 class="entry-title">
-		    Scribe Nginx Build
+		<h1>
+		    Nginx & Plugins
 		</h1>
-		<div class="entry-content"><p>Over the past few months, we&#39;d found ourselves building custom Nginx packages by hand regularly with
-each new <a href="http://ppa.launchpad.net/nginx/development/ubuntu">Ubuntu Nginx Mainline</a> release, and it
-was becoming quite tedious. Having never worked with <a href="http://launchpad.net">Launchpad</a> prior, we began
-our journey by simply writing a script that would handle building a reliable Debian package for our own 
-internal use.</p>
-</div>
 		<p>
-			<a class="btn btn-md btn-primary" href="/2014/10/18/scribe-nginx-build.html" role="button">Read more</a>
+			A collection of scripts we use to build our Nginx PPA, as well as slight changes made to select modules required for compatibility.
 		</p>
 	</div>
 </div>
-
 <div class="container">
-<div id="home" class="row">
-	<div class="col-md-7">
-	  <h3 class="posts-header">Latest Blog Entries</h3>
-	  <ul class="list-unstyled posts">
-	    
-	      <li>
-	      	<a href="/2014/10/18/scribe-nginx-build.html">Scribe Nginx Build</a> <small>October 18, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/05/28/spdy.html">A Speedy Web</a> <small>May 28, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/03/04/text-messaging-library.html">Text Messaging Library</a> <small>March 04, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/03/02/new-github-website.html">New GitHub Website</a> <small>March 02, 2014</small>
-	      </li>
-	    
-	  </ul>
+	<div class="well code-group-well">
+		<p><em>This group of projects is also available via our internal Git management solution at: <a href="https://scribe.software/code/projects/NGX">https://scribe.software/code/projects/NGX</a></em></p>
 	</div>
-	<div class="col-md-4 col-md-offset-1">
-		<div class="panel panel-default">
-		  	<div class="panel-heading">
-		    	<h2 class="panel-title">Project Categories</h2>
-		  	</div>
-		  	<div class="panel-body">
-		  		<ul class="list-unstyled posts-sb">
-		  			
-                      
-                    
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/jquery.html">jQuery Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/nginx.html">Nginx & Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/php-libraries.html">PHP Libraries</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/php-symfony-bundles.html">PHP Symfonty Bundles</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/ruby-gems.html">Ruby Gems</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/scml-resources.html">ScML Resources</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/shell-scripts.html">Shell Scripts</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/sublime-text-plugins.html">Sublime Text Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-				</ul>
-		  	</div>
-		</div>
+	<div class="code-group-list">
+		<ul class="list-unstyled">
+		
+			<li>
+					<div class="code-repo-info">
+						<h6 style="padding-left:4px;"><a href="https://scribe.software/code/projects/NGX/repos/nginx-fancy-index-theme/browse">Nginx Fancy Index Theme</a></h6>
+						<p>A stylist and simple theme for the Nginx fancyindex module.</p>
+					</div>
+					<div class="code-repo-clone">
+						<button class="code-clone-url" data-clipboard-text="https://scribe.software/code/projects/NGX/repos/nginx-fancy-index-theme/clone" title="Click to copy to the git clone URL for Nginx Fancy Index Theme to your clipboard.">Copy Git Clone URL</button>
+						<pre class="code-clone-url-dply"><code class="html">https://scribe.software/code/projects/NGX/repos/nginx-fancy-index-theme/clone</code></pre>
+					</div>
+			</li>
+		
+			<li>
+					<div class="code-repo-info">
+						<h6 style="padding-left:4px;"><a href="https://scribe.software/code/projects/NGX/repos/nginx-http-extended-status-module/browse">Nginx HTTP Extended Status Module</a></h6>
+						<p>This module provides extended Nginx statistics. It requires patching the Nginx source and as such a patch file must be made for each new Nginx release.</p>
+					</div>
+					<div class="code-repo-clone">
+						<button class="code-clone-url" data-clipboard-text="https://scribe.software/code/projects/NGX/repos/nginx-http-extended-status-module/clone" title="Click to copy to the git clone URL for Nginx HTTP Extended Status Module to your clipboard.">Copy Git Clone URL</button>
+						<pre class="code-clone-url-dply"><code class="html">https://scribe.software/code/projects/NGX/repos/nginx-http-extended-status-module/clone</code></pre>
+					</div>
+			</li>
+		
+			<li>
+					<div class="code-repo-info">
+						<h6 style="padding-left:4px;"><a href="https://scribe.software/code/projects/NGX/repos/nginx-mainline-package-builder/browse">Nginx Mainline Package Builder</a></h6>
+						<p>This script builds a set of Nginx packages against the Ubuntu Nginx Mainline Branch, currently at version 1.7.8, with an emphasis on producing a streamlined final binary that includes/excluded configuration flags and adds a short list of modules used internally by Scribe Inc.—for both our own websites and those we administer.</p>
+					</div>
+					<div class="code-repo-clone">
+						<button class="code-clone-url" data-clipboard-text="https://scribe.software/code/projects/NGX/repos/nginx-mainline-package-builder/clone" title="Click to copy to the git clone URL for Nginx Mainline Package Builder to your clipboard.">Copy Git Clone URL</button>
+						<pre class="code-clone-url-dply"><code class="html">https://scribe.software/code/projects/NGX/repos/nginx-mainline-package-builder/clone</code></pre>
+					</div>
+			</li>
+		
+		</ul>
 	</div>
 </div>
-</div>
+<script>
+var client = new ZeroClipboard($(".code-clone-url"));
+
+client.on( 'ready', function(event) {
+	console.log( 'movie is loaded' );
+
+	client.on( 'aftercopy', function(event) {
+	  console.log($(event.target).closest('.code-clone-url-dply'));
+	});
+} );
+</script>
 
         <div class="footer">
             <div class="container">

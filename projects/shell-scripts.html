@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Home</title>
+        <title>Shell Scripts</title>
         <meta name="viewport" content="width=device-width">
 
         <!-- Latest compiled and minified CSS -->
@@ -99,130 +99,59 @@
             </div><!--/.nav-collapse -->
           </div><!--/.container -->
         </div>
-        <div class="jumbotron">
+        <div class="jumbotron page-jumbotron">
 	<div class="container">
-		
-		<h1 class="entry-title">
-		    Scribe Nginx Build
+		<h1>
+		    Shell Scripts
 		</h1>
-		<div class="entry-content"><p>Over the past few months, we&#39;d found ourselves building custom Nginx packages by hand regularly with
-each new <a href="http://ppa.launchpad.net/nginx/development/ubuntu">Ubuntu Nginx Mainline</a> release, and it
-was becoming quite tedious. Having never worked with <a href="http://launchpad.net">Launchpad</a> prior, we began
-our journey by simply writing a script that would handle building a reliable Debian package for our own 
-internal use.</p>
-</div>
 		<p>
-			<a class="btn btn-md btn-primary" href="/2014/10/18/scribe-nginx-build.html" role="button">Read more</a>
+			Random assortment of sh/bash scripts used for a variety of purposes within Scribe.
 		</p>
 	</div>
 </div>
-
 <div class="container">
-<div id="home" class="row">
-	<div class="col-md-7">
-	  <h3 class="posts-header">Latest Blog Entries</h3>
-	  <ul class="list-unstyled posts">
-	    
-	      <li>
-	      	<a href="/2014/10/18/scribe-nginx-build.html">Scribe Nginx Build</a> <small>October 18, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/05/28/spdy.html">A Speedy Web</a> <small>May 28, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/03/04/text-messaging-library.html">Text Messaging Library</a> <small>March 04, 2014</small>
-	      </li>
-	    
-	      <li>
-	      	<a href="/2014/03/02/new-github-website.html">New GitHub Website</a> <small>March 02, 2014</small>
-	      </li>
-	    
-	  </ul>
+	<div class="well code-group-well">
+		<p><em>This group of projects is also available via our internal Git management solution at: <a href="https://scribe.software/code/projects/SH">https://scribe.software/code/projects/SH</a></em></p>
 	</div>
-	<div class="col-md-4 col-md-offset-1">
-		<div class="panel panel-default">
-		  	<div class="panel-heading">
-		    	<h2 class="panel-title">Project Categories</h2>
-		  	</div>
-		  	<div class="panel-body">
-		  		<ul class="list-unstyled posts-sb">
-		  			
-                      
-                    
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/jquery.html">jQuery Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/nginx.html">Nginx & Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/php-libraries.html">PHP Libraries</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/php-symfony-bundles.html">PHP Symfonty Bundles</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/ruby-gems.html">Ruby Gems</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/scml-resources.html">ScML Resources</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/shell-scripts.html">Shell Scripts</a>
-                        	</p>
-                        </li>
-                      
-                    
-                      
-                        <li>
-                        	<p>
-                        		<a href="/projects/sublime-text-plugins.html">Sublime Text Plugins</a>
-                        	</p>
-                        </li>
-                      
-                    
-				</ul>
-		  	</div>
-		</div>
+	<div class="code-group-list">
+		<ul class="list-unstyled">
+		
+			<li>
+					<div class="code-repo-info">
+						<h6 style="padding-left:4px;"><a href="https://scribe.software/code/projects/SH/repos/deadlock-access-decision-manager/browse">Deadswitch Access-decision Manager</a></h6>
+						<p>Dam is a bash login shell used to securly allow password login to an otherwise key-based-authentication only linux server. It is intended to be used for the sole purpose of allowing rightful systems administrators access in an emergency situation where they do not have access to a machine whos public key was setup with their account, and thereforce must revert back to password-based login.</p>
+					</div>
+					<div class="code-repo-clone">
+						<button class="code-clone-url" data-clipboard-text="https://scribe.software/code/projects/SH/repos/deadlock-access-decision-manager/clone" title="Click to copy to the git clone URL for Deadswitch Access-decision Manager to your clipboard.">Copy Git Clone URL</button>
+						<pre class="code-clone-url-dply"><code class="html">https://scribe.software/code/projects/SH/repos/deadlock-access-decision-manager/clone</code></pre>
+					</div>
+			</li>
+		
+			<li>
+					<div class="code-repo-info">
+						<h6 style="padding-left:4px;"><a href="https://scribe.software/code/projects/SH/repos/ubuntu-server-helper-collection/browse">Ubuntu Server Helper Collection</a></h6>
+						<p>This repository contains a collection of helper scripts specifically created and solely tested on Ubuntu Server releases 14.04, 14.10, and 15.04. They include an array of shell scripts used by Scribe Inc. to help with daily maintenance of our server infrastructure.</p>
+					</div>
+					<div class="code-repo-clone">
+						<button class="code-clone-url" data-clipboard-text="https://scribe.software/code/projects/SH/repos/ubuntu-server-helper-collection/clone" title="Click to copy to the git clone URL for Ubuntu Server Helper Collection to your clipboard.">Copy Git Clone URL</button>
+						<pre class="code-clone-url-dply"><code class="html">https://scribe.software/code/projects/SH/repos/ubuntu-server-helper-collection/clone</code></pre>
+					</div>
+			</li>
+		
+		</ul>
 	</div>
 </div>
-</div>
+<script>
+var client = new ZeroClipboard($(".code-clone-url"));
+
+client.on( 'ready', function(event) {
+	console.log( 'movie is loaded' );
+
+	client.on( 'aftercopy', function(event) {
+	  console.log($(event.target).closest('.code-clone-url-dply'));
+	});
+} );
+</script>
 
         <div class="footer">
             <div class="container">
