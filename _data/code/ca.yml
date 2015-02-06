@@ -1,0 +1,9 @@
+title: Chrome Apps
+desc: Our collection of Chrome applications.
+url: https://scribe.software/code/projects/CA
+repos:
+  - 
+    name: Digital Hub
+    url: https://scribe.software/code/projects/CA/repos/digital-hub/
+    clone: https://scribe.software/code/scm/ca/digital-hub.git
+    desc: A simple chrome application to open Scribe's Digital Hub within a dedicated Chrome panel.
